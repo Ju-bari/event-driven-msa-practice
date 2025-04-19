@@ -87,6 +87,7 @@ public class KafkaAdminClient {
         }
     }
 
+    // reactive
     private HttpStatus getSchemaRegistryStatus() {
         try {
             return webClient

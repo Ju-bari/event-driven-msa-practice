@@ -1,6 +1,6 @@
 package com.jh.transformer;
 
-import com.microservices.demo.kafka.avro.model.TwitterAvroModel;
+import com.jh.avro.model.TwitterAvroModel;
 import org.springframework.stereotype.Component;
 import twitter4j.Status;
 

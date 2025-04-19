@@ -71,8 +71,6 @@
 
     </dependencies>
 
-
-
     <build>
         <plugins>
             <plugin>
@@ -80,7 +78,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <image>
-                        <name>${project.groupId}/twitter.to.kafka.service:${project.version}}</name>
+                        <name>${project.groupId}/twitter.to.kafka.service:${project.version}</name>
                     </image>
                 </configuration>
 

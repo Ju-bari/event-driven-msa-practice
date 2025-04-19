@@ -154,6 +154,13 @@
                 <version>${spring-retry.version}</version>
             </dependency>
 
+            <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${aspectj-weaver.version}</version>
+            </dependency>
+
             <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-webflux -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -186,13 +193,6 @@
                 </exclusions>
             </dependency>
 
-            <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
-            <dependency>
-                <groupId>org.aspectj</groupId>
-                <artifactId>aspectjweaver</artifactId>
-                <version>${aspectj-weaver.version}</version>
-            </dependency>
-
         </dependencies>
     </dependencyManagement>
 
@@ -204,9 +204,17 @@
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
                     <release>8</release>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
         </plugins>
+
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -215,7 +223,7 @@
                     <version>${spring-boot.version}</version>
                 </plugin>
             </plugins>
+
         </pluginManagement>
     </build>
-
 </project>

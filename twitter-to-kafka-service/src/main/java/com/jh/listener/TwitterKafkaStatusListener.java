@@ -3,7 +3,7 @@ package com.jh.listener;
 import com.jh.config.KafkaConfigData;
 import com.jh.service.KafkaProducer;
 import com.jh.transformer.TwitterStatusToAvroTransformer;
-import com.microservices.demo.kafka.avro.model.TwitterAvroModel;
+import com.jh.avro.model.TwitterAvroModel;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

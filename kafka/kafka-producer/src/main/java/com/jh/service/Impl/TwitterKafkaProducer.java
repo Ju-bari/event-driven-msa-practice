@@ -1,7 +1,7 @@
 package com.jh.service.Impl;
 
 import com.jh.service.KafkaProducer;
-import com.microservices.demo.kafka.avro.model.TwitterAvroModel;
+import com.jh.avro.model.TwitterAvroModel;
 import jakarta.annotation.PreDestroy;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

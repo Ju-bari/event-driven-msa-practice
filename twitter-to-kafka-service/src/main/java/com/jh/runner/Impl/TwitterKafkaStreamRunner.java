@@ -1,4 +1,4 @@
-package com.jh.runner.runnerImpl;
+package com.jh.runner.Impl;
 
 
 import com.jh.config.TwitterToKafkaServiceConfigData;
@@ -22,7 +22,9 @@ import java.util.Arrays;
 public class TwitterKafkaStreamRunner implements StreamRunner {
 
     private final TwitterToKafkaServiceConfigData twitterToKafkaServiceConfigData;
+
     private final TwitterKafkaStatusListener twitterKafkaStatusListener;
+
     private TwitterStream twitterStream;
 
     @Override
@@ -48,4 +50,5 @@ public class TwitterKafkaStreamRunner implements StreamRunner {
 
         log.info("Started filtering twitter stream for keywords: {}", Arrays.toString(keywords));
     }
+
 }

@@ -20,6 +20,15 @@
     <developers>
         <developer/>
     </developers>
+    <modules>
+        <module>twitter-to-kafka-service</module>
+        <module>app-config-data</module>
+        <module>kafka</module>
+        <module>kafka/kafka-admin</module>
+        <module>kafka/kafka-model</module>
+        <module>kafka/kafka-producer</module>
+        <module>common-config</module>
+    </modules>
     <scm>
         <connection/>
         <developerConnection/>
@@ -33,13 +42,59 @@
         <java.version>17</java.version>
         <spring-boot.version>3.4.4</spring-boot.version>
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
+        <twitter4j.version>4.0.7</twitter4j.version>
+        <lombok.version>1.18.30</lombok.version>
+        <sl4j.version>2.0.16</sl4j.version>
+        <avro.version>1.11.4</avro.version>
+        <spring-kafka.version>3.3.3</spring-kafka.version>
+        <spring-retry.version>2.0.11</spring-retry.version>
+        <avro-serializer.version>7.9.0</avro-serializer.version>
+        <aspectj-weaver.version>1.9.22</aspectj-weaver.version>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>confluent</id>
+            <url>https://packages.confluent.io/maven/</url>
+        </repository>
+    </repositories>
 
     <dependencyManagement>
         <dependencies>
+            <!-- LOCAL -->
             <dependency>
-                <groupId>org.jmotor.artifact</groupId>
-                <artifactId>artifact-versions_2.11</artifactId>
+                <groupId>com.jh</groupId>
+                <artifactId>app-config-data</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.jh</groupId>
+                <artifactId>common-config</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.jh</groupId>
+                <artifactId>kafka-model</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.jh</groupId>
+                <artifactId>kafka-admin</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.jh</groupId>
+                <artifactId>kafka-producer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
                 <version>${spring-boot.version}</version>
             </dependency>
 
@@ -49,6 +104,95 @@
                 <version>${spring-boot.version}</version>
                 <scope>test</scope>
             </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.twitter4j/twitter4j-stream -->
+            <dependency>
+                <groupId>org.twitter4j</groupId>
+                <artifactId>twitter4j-stream</artifactId>
+                <version>${twitter4j.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${sl4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jmotor.artifact</groupId>
+                <artifactId>artifact-versions_2.11</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.avro/avro -->
+            <dependency>
+                <groupId>org.apache.avro</groupId>
+                <artifactId>avro</artifactId>
+                <version>${avro.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka -->
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>${spring-kafka.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.springframework.retry/spring-retry -->
+            <dependency>
+                <groupId>org.springframework.retry</groupId>
+                <artifactId>spring-retry</artifactId>
+                <version>${spring-retry.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-webflux -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-webflux</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/io.confluent/kafka-avro-serializer -->
+            <dependency>
+                <groupId>io.confluent</groupId>
+                <artifactId>kafka-avro-serializer</artifactId>
+                <version>${avro-serializer.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-log4j12</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>io.swagger</groupId>
+                        <artifactId>swagger-annotations</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>io.swagger</groupId>
+                        <artifactId>swagger-core</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${aspectj-weaver.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

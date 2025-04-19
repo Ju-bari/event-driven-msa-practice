@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @Slf4j
 @SpringBootTest
-class MainTest {
+class TwitterToKafkaServiceApplicationTest {
 
     @Test
     public void contextLoads() {

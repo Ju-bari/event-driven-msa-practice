@@ -1,4 +1,4 @@
-package com.jh.runner.runnerImpl;
+package com.jh.runner.Impl;
 
 import com.jh.config.TwitterToKafkaServiceConfigData;
 import com.jh.exception.TwitterToKafkaServiceException;
@@ -7,7 +7,6 @@ import com.jh.runner.StreamRunner;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.context.annotation.Conditional;
 import org.springframework.stereotype.Component;
 import twitter4j.Status;
 import twitter4j.TwitterException;

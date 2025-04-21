@@ -28,6 +28,7 @@
         <module>kafka/kafka-model</module>
         <module>kafka/kafka-producer</module>
         <module>common-config</module>
+        <module>config-server</module>
     </modules>
     <scm>
         <connection/>
@@ -50,6 +51,8 @@
         <spring-retry.version>2.0.11</spring-retry.version>
         <avro-serializer.version>7.9.0</avro-serializer.version>
         <aspectj-weaver.version>1.9.22</aspectj-weaver.version>
+        <spring-cloud.version>4.2.1</spring-cloud.version>
+        <spring-cloud-dependencies.version>Hoxton.SR9</spring-cloud-dependencies.version>
     </properties>
 
     <repositories>
@@ -193,6 +196,21 @@
                 </exclusions>
             </dependency>
 
+            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-config-server -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-config-server</artifactId>
+                <version>${spring-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -223,7 +241,6 @@
                     <version>${spring-boot.version}</version>
                 </plugin>
             </plugins>
-
         </pluginManagement>
     </build>
 </project>

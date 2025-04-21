@@ -1,0 +1,21 @@
+#spring:
+#  application:
+#    name: configserver
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: file://Users...
+#          clone-on-start: true
+#    fail-test: true
+
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Ju-bari/event-driven-msa-practice
+          search-paths: config-server-repository/**
+          default-label: master

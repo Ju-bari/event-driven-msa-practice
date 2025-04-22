@@ -52,7 +52,7 @@
         <avro-serializer.version>7.9.0</avro-serializer.version>
         <aspectj-weaver.version>1.9.22</aspectj-weaver.version>
         <spring-cloud.version>4.2.1</spring-cloud.version>
-        <spring-cloud-dependencies.version>Hoxton.SR9</spring-cloud-dependencies.version>
+        <spring-cloud-dependencies.version>2024.0.1</spring-cloud-dependencies.version>
     </properties>
 
     <repositories>
@@ -209,6 +209,13 @@
                 <version>${spring-cloud-dependencies.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-config -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-config</artifactId>
+                <version>${spring-cloud.version}</version>
             </dependency>
 
         </dependencies>

@@ -3,5 +3,18 @@ server:
 
 logging:
   level:
-    ROOT: INFO
+    ROOT: DEBUG
     org.spring.framework.cloud.config: DEBUG
+
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Ju-bari/event-driven-msa-practice
+          search-paths: config-server-repository/**
+          username: Ju-bari
+          password:
+          default-label: master

@@ -29,6 +29,7 @@
         <module>kafka/kafka-producer</module>
         <module>common-config</module>
         <module>config-server</module>
+        <module>playground</module>
     </modules>
     <scm>
         <connection/>
@@ -53,6 +54,7 @@
         <aspectj-weaver.version>1.9.22</aspectj-weaver.version>
         <spring-cloud.version>4.2.1</spring-cloud.version>
         <spring-cloud-dependencies.version>2024.0.1</spring-cloud-dependencies.version>
+        <jasypt.version>3.0.5</jasypt.version>
     </properties>
 
     <repositories>
@@ -216,6 +218,20 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-config</artifactId>
                 <version>${spring-cloud.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-security</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.github.ulisesbocchio/jasypt-spring-boot-starter -->
+            <dependency>
+                <groupId>com.github.ulisesbocchio</groupId>
+                <artifactId>jasypt-spring-boot-starter</artifactId>
+                <version>${jasypt.version}</version>
             </dependency>
 
         </dependencies>

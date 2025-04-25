@@ -6,6 +6,21 @@ logging:
     ROOT: DEBUG
     org.spring.framework.cloud.config: DEBUG
 
+#spring:
+#  application:
+#    name: configserver
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://github.com/Ju-bari/event-driven-msa-practice
+#          search-paths: config-server-repository/**
+#          username: Ju-bari
+#          password:
+#          clone-on-start: true
+#          default-label: master
+#     fail-fast: true
+
 spring:
   application:
     name: configserver
@@ -13,8 +28,17 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/Ju-bari/event-driven-msa-practice
-          search-paths: config-server-repository/**
+          uri: https://github.com/Ju-bari/event-driven-msa-practice-config
           username: Ju-bari
-          password:
+          password: # global로 설정해서 괜찮나
           default-label: master
+  security:
+    user:
+      name: spring_cloud_user
+      password: ENC(qdaCaSJPjh4GNx0NkzEXXZdpFpMp80SJ/IZJZaPWnt49iH5oJEVWgv8AWAVzFzhj2jncnc1HmqmHDAjz0SLBTg==)
+
+jasypt:
+  encryptor:
+    password: ${JASYPT_ENCRYPTOR_PASSWORD}
+    algorithm: PBEWITHHMACSHA512ANDAES_256
+    iv-generator-classname: org.jasypt.iv.RandomIvGenerator

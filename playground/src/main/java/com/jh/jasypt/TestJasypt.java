@@ -12,7 +12,7 @@ public class TestJasypt {
         encryptor.setPassword("jasypt_test123");
         encryptor.setIvGenerator(new RandomIvGenerator());
 
-        String result = encryptor.encrypt("spring_cloud_pwd!123");
+        String result = encryptor.encrypt("spring_pwd!123");
 
         System.out.println(result);
         System.out.println(encryptor.decrypt(result));

@@ -2,6 +2,7 @@ package com.jh.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -13,9 +14,11 @@ public class SecurityConfig {
         return http
                 .securityMatcher("/**")
                 .authorizeHttpRequests((authorize) -> authorize
-                        .requestMatchers("/encrypt/**", "/decrypt/**", "/actuator/**").permitAll()
+                        .requestMatchers("/encrypt/**", "/decrypt/**", "/actuator/**", "/error").permitAll()
                         .anyRequest().authenticated()
+//                        .anyRequest().permitAll() // 임시
                 )
+                .httpBasic(Customizer.withDefaults())
                 .csrf((csrf) -> csrf.disable())
                 .build();
     }

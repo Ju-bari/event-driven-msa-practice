@@ -21,7 +21,7 @@ spring:
         git:
           uri: https://github.com/Ju-bari/event-driven-msa-practice-config
           username: Ju-bari
-          password: ENC(paaEg40xMJW3WFDkGW26+aGp/i2mjCAWx6oiwIe/LHQojO/Utel3f8S3JjwQEL90c8dFx/V8dpxA+NznZXqo/bGzm25bdGpq+7XULwiKwRpaQw9RJ6BDpMXEzpedEUf5wLx5ii4Srz77m+/L7HnSx09p0ujXVeRjgtElNc4uZWE=)
+          password: ENC(SwxK+99yTpYz8vVrOIyVnQTuZ8oSjss9mM4sL23tDehNzWMAhzGxpjL2ByK79htuLthQo3uL8DOUp/pCQ/Q9JYt/0rzpgI8929k2ksC8zHKJfpYeZdCWhh5kIcYO5cPxkqgdyZoVlE3GP37sY7f2nsXdFGkgZES1HdzFJZZjby8=)
           default-label: master
         encrypt:
           enabled: true
@@ -29,7 +29,7 @@ spring:
   security:
     user:
       name: spring_cloud_user
-      password: ENC(l+mlSIwlsgf0YfCoruBHMMnKtrqd0bBUM/2NO1jgtIUjWZ7FmNtKU4fkHKYXmLmZ)
+      password: ENC(O8Tpi+WLMRESfRbxgswfuE9VaXdTOjQs+EH6HL0K7LYwrprUrCSiJoTKOK/VWe0F)
 
 jasypt:
   encryptor:

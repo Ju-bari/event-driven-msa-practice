@@ -9,10 +9,14 @@ public class TestJasypt {
 
         StandardPBEStringEncryptor encryptor = new StandardPBEStringEncryptor();
         encryptor.setAlgorithm("PBEWITHHMACSHA512ANDAES_256");
-        encryptor.setPassword("jasypt_test123");
+        // =========   조심   ===========
+        encryptor.setPassword("");
+        // =========   조심   ===========
         encryptor.setIvGenerator(new RandomIvGenerator());
 
-        String result = encryptor.encrypt("spring_pwd!123");
+        // =========   조심   ===========
+        String result = encryptor.encrypt("");
+        // =========   조심   ===========
 
         System.out.println(result);
         System.out.println(encryptor.decrypt(result));

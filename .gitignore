@@ -34,3 +34,6 @@ build/
 
 ### env ###
 **/.env
+
+### Custom ###
+playground/src/main/java/com/jh/jasypt/TestJasypt.java
